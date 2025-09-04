@@ -2,7 +2,6 @@ import { Link, Outlet, useParams } from 'react-router-dom';
 import cn from 'classnames';
 import 'bulma/css/bulma.css';
 import { tabs } from '../api/tabs';
-// import TabsItem from './TabsItem';
 
 export const Tabs = () => {
   const { tabId } = useParams();
@@ -16,7 +15,7 @@ export const Tabs = () => {
             <li
               data-cy="Tab"
               key={tab.id}
-              className={cn({ 'is-active': tabId && tabId === tab.id })}
+              className={cn({ 'is-active': tabId === tab.id })}
             >
               <Link to={tab.id}>{tab.title}</Link>
             </li>
