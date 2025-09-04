@@ -11,23 +11,27 @@ export const App = () => {
 
   return (
     <>
-      {/* Also requires <html class="has-navbar-fixed-top"> */}
       <nav
         className="navbar is-light is-fixed-top is-mobile has-shadow"
         data-cy="Nav"
       >
         <div className="container">
           <div className="navbar-brand">
-            <div className={`navbar-item${isHomeActive ? ' is-active' : ''}`}>
-              <Link to="/">Home</Link>
-            </div>
-            <div className={`navbar-item${isTabsActive ? ' is-active' : ''}`}>
-              <Link to="/tabs">Tabs</Link>
-            </div>
+            <Link
+              to="/"
+              className={`navbar-item${isHomeActive ? ' is-active' : ''}`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/tabs"
+              className={`navbar-item${isTabsActive ? ' is-active' : ''}`}
+            >
+              Tabs
+            </Link>
           </div>
         </div>
       </nav>
-
       <div className="section">
         <div className="container">
           <Outlet />
