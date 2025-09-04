@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/Home';
 import { Tabs } from './pages/Tabs';
 import { App } from './App';
+import TabsItem from './pages/TabsItem';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <HashRouter>
@@ -13,8 +14,8 @@ createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="home" element={<Navigate to="/" replace />} />
 
         <Route path="tabs" element={<Tabs />}>
-          <Route index element={<Tabs />} />
-          <Route path=":tabId" element={<Tabs />} />
+          <Route index element={<TabsItem />} />
+          <Route path=":tabId" element={<TabsItem />} />
         </Route>
 
         <Route path="*" element={<h1 className="title">Page not found</h1>} />
